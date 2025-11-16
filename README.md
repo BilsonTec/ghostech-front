@@ -43,10 +43,44 @@ Le site a pour but de :
 ## 📁 Structure du projet
 
 ```bash
-src/
-  ├── assets/             # images, logos, illustrations
-  ├── components/         # navbar, footer, cards, sections
-  ├── pages/              # Home, Programme, Inscription, Success, Admin
-  ├── firebase/           # config firebase + services
-  ├── App.jsx             # routes
-  └── main.jsx            # point d'entrée
+
+
+📁 Structure complète du projet GhosTech Events
+Arborescence des fichiers
+ghostech-atelier/
+├── node_modules/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button.jsx
+│   │   │   ├── Card.jsx
+│   │   │   └── Section.jsx
+│   │   ├── layout/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Footer.jsx
+│   │   └── sections/
+│   │       ├── Hero.jsx
+│   │       ├── ProgrammeSection.jsx
+│   │       ├── ContactSection.jsx
+│   │       └── InscriptionSection.jsx
+│   ├── pages/
+│   │   ├── Accueil.jsx
+│   │   ├── Programme.jsx
+│   │   ├── Contact.jsx
+│   │   └── Inscrire.jsx
+│   ├── data/
+│   │   └── programmeData.js
+│   ├── assets/
+│   │   └── react.svg
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
