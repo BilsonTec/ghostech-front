@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
 import App from "./App";
 import Accueil from "./pages/Accueil";
 import Programme from "./pages/Programme";
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       { path: "programme", element: <Programme /> },
       { path: "inscrire", element: <Inscrire /> },
       { path: "Harding", element: <Harding /> },
-      {path : "Bilson", element: <Bilson />}
+      {path : "Bilson", element: <Bilson />},
+      {path: "dashboard", element: <DashboardInscrits /> }
 
     ]
   }

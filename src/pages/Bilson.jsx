@@ -1,98 +1,106 @@
 // pages/Harding.jsx
+// @ts-nocheck
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaWhatsapp, FaEnvelope, FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
 export default function Bilson() {
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen py-16 bg-gray-50">
+      <div className="container px-4 mx-auto">
+        
         {/* Navigation */}
         <div className="mb-12">
           <Link 
             to="/" 
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200 text-xl"
+            className="inline-flex items-center text-lg text-gray-600 transition-colors duration-200 hover:text-gray-900 sm:text-xl"
           >
-            <FaArrowLeft className="mr-4 text-2xl" />
+            <FaArrowLeft className="mr-4 text-xl sm:text-2xl" />
             Retour à l'accueil
           </Link>
         </div>
 
         {/* Card Container */}
         <div className="max-w-6xl mx-auto">
-          {/* Profile Card - Layout horizontal amélioré */}
-          <div className="bg-white border border-gray-200 p-12">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
+
+          {/* Profile Card */}
+          <div className="p-6 bg-white border border-gray-200 sm:p-10 lg:p-12">
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-16">
               
-              {/* Photo Container - À gauche */}
+              {/* Photo */}
               <div className="flex-shrink-0">
-                <div className="w-96 h-96 overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="flex items-center justify-center overflow-hidden bg-gray-100 rounded-lg w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                   <img 
                     src="/src/assets/bilson.jpg" 
-                    alt="Jérémie Harding" 
-                    className="w-full h-full object-cover"
+                    alt="Emanuelle Bilson" 
+                    className="object-cover w-full h-full"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'block';
                     }}
                   />
-                  <div className="hidden text-gray-400 text-lg">
+                  <div className="hidden text-lg text-gray-400">
                     Photo non disponible
                   </div>
                 </div>
               </div>
 
-              {/* Information Container - À droite */}
+              {/* Info */}
               <div className="flex-1 text-center lg:text-left">
-                {/* Name & Title */}
-                <h1 className="text-5xl font-light text-gray-900 mb-6">
+
+                {/* Name */}
+                <h1 className="mb-4 text-3xl font-light text-gray-900 sm:text-4xl lg:text-5xl sm:mb-6">
                   Emanuelle Bilson
                 </h1>
-                <p className="text-gray-600 text-3xl mb-16">
+
+                <p className="mb-10 text-xl text-gray-600 sm:text-2xl lg:text-3xl sm:mb-16">
                   Développeur React.js / Firebase
                 </p>
 
-                {/* Contact Links */}
-                <div className="space-y-8">
+                {/* Contacts */}
+                <div className="space-y-4 sm:space-y-6">
 
-                   <a 
+                  <a 
                     href="https://github.com/BilsonTec" 
-                    className="flex items-center justify-center lg:justify-start w-full py-6 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 text-2xl"
+                    className="flex items-center justify-center w-full py-4 text-lg text-gray-700 transition-colors duration-200 bg-gray-100 rounded-lg lg:justify-start sm:py-6 hover:bg-gray-200 sm:text-2xl"
                   >
-                    <FaGithub className="mr-6 text-3xl" />
+                    <FaGithub className="mr-4 text-2xl sm:mr-6 sm:text-3xl" />
                     Github
                   </a>
 
                   <a 
                     href="https://www.linkedin.com/in/emmanuelbilson?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                    className="flex items-center justify-center lg:justify-start w-full py-6 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 text-2xl"
+                    className="flex items-center justify-center w-full py-4 text-lg text-gray-700 transition-colors duration-200 bg-gray-100 rounded-lg lg:justify-start sm:py-6 hover:bg-gray-200 sm:text-2xl"
                   >
-                    <FaLinkedin className="mr-6 text-3xl" />
+                    <FaLinkedin className="mr-4 text-2xl sm:mr-6 sm:text-3xl" />
                     LinkedIn
                   </a>
                   
                   <a 
                     href="tel:+2250799637242" 
-                    className="flex items-center justify-center lg:justify-start w-full py-6 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 text-2xl"
+                    className="flex items-center justify-center w-full py-4 text-lg text-gray-700 transition-colors duration-200 bg-gray-100 rounded-lg lg:justify-start sm:py-6 hover:bg-gray-200 sm:text-2xl"
                   >
-                    <FaWhatsapp className="mr-6 text-3xl" />
+                    <FaWhatsapp className="mr-4 text-2xl sm:mr-6 sm:text-3xl" />
                     WhatsApp
                   </a>
                   
                   <a 
                     href="mailto:emmanuelbilson234@gmail.com"
-                    className="flex items-center justify-center lg:justify-start w-full py-6 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200 text-2xl"
+                    className="flex items-center justify-center w-full py-4 text-lg text-gray-700 transition-colors duration-200 bg-gray-100 rounded-lg lg:justify-start sm:py-6 hover:bg-gray-200 sm:text-2xl"
                   >
-                    <FaEnvelope className="mr-6 text-3xl" />
+                    <FaEnvelope className="mr-4 text-2xl sm:mr-6 sm:text-3xl" />
                     Email
                   </a>
+
                 </div>
               </div>
 
             </div>
           </div>
+
         </div>
       </div>
     </div>
   );
 }
+

@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./pages/scrollToTop";
 
 export default function Layout() {
   const location = useLocation();
@@ -10,11 +11,14 @@ export default function Layout() {
 
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen">
       
       {!hideNavbarOn.includes(location.pathname) && <Navbar />}
 
       <main className="flex-grow">
+        
+          <ScrollToTop />
+          
         <Outlet />
       </main>
 
