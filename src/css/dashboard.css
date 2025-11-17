@@ -1,0 +1,18 @@
+/* Dans votre fichier CSS global ou dans un style tag */
+:root {
+  --color-accent: #38F4F3;
+  --color-dark: #191D27;
+  --color-secondary: #43959A;
+  --color-light: #D2F5F2;
+  --color-deep: #173740;
+  --color-accent2: #40B8BC;
+  --color-textsoft: #2E636A;
+}
+
+.table-zebra tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.table-zebra tbody tr:nth-child(odd) {
+  background-color: white;
+}
