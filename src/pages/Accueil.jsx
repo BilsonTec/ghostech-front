@@ -620,24 +620,6 @@ export default function Accueil() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-[#D2F5F2]">🚀</div>
-              <div className="text-[#D2F5F2] mt-2">Lancement rapide</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-[#D2F5F2]">💼</div>
-              <div className="text-[#D2F5F2] mt-2">Projets concrets</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-[#D2F5F2]">👨‍🏫</div>
-              <div className="text-[#D2F5F2] mt-2">Experts mentors</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-[#D2F5F2]">🎯</div>
-              <div className="text-[#D2F5F2] mt-2">Objectif emploi</div>
-            </div>
-          </div>
         </div>
       </section>
 
