@@ -1,11 +1,10 @@
 export default function inscrire() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          
-          {/* Texte à gauche */}
-          <div className="flex flex-col justify-center space-y-8">
+    <div className="min-h-screen flex">
+      {/* Partie gauche avec le dégradé */}
+      <div className="hidden lg:flex lg:flex-1 bg-gradient-to-br from-blue-50 to-green-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-lg mx-auto w-full">
+          <div className="flex flex-col justify-center space-y-8 h-full">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#173740' }}>
                 Rejoignez l'Atelier <span style={{ color: '#43959A' }}>GHOSTECH</span>
@@ -16,65 +15,15 @@ export default function inscrire() {
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span style={{ color: '#43959A' }}>✓</span>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-bold mb-1" style={{ color: '#173740' }}>Formation Pratique</h3>
-                  <p style={{ color: '#2E636A' }}>Apprentissage hands-on avec des projets réels et du matériel professionnel</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span style={{ color: '#43959A' }}>✓</span>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-bold mb-1" style={{ color: '#173740' }}>Expertise Confirmée</h3>
-                  <p style={{ color: '#2E636A' }}>Encadrement par des professionnels du secteur avec années d'expérience</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span style={{ color: '#43959A' }}>✓</span>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-bold mb-1" style={{ color: '#173740' }}>Certification</h3>
-                  <p style={{ color: '#2E636A' }}>Obtenez une certification reconnue valorisant vos nouvelles compétences</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span style={{ color: '#43959A' }}>✓</span>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-bold mb-1" style={{ color: '#173740' }}>Communauté</h3>
-                  <p style={{ color: '#2E636A' }}>Intégrez un réseau de passionnés et bénéficiez d'un accompagnement continu</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg border border-blue-100 mt-auto">
-              <h4 className="font-bold text-lg mb-2" style={{ color: '#173740' }}>Prochaine Session</h4>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-2xl font-bold" style={{ color: '#43959A' }}>29 Novembre 2025</p>
-                  <p className="text-sm" style={{ color: '#2E636A' }}>IUA, Corniche</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-semibold" style={{ color: '#173740' }}>Places limitées</p>
-                  <p className="text-xs" style={{ color: '#2E636A' }}>Inscription obligatoire</p>
-                </div>
-              </div>
-            </div>
+            {/* Les sections avec les ✓ ont été supprimées comme demandé */}
           </div>
+        </div>
+      </div>
 
-          {/* Formulaire à droite - Fond blanc sur toute la hauteur */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col h-full">
+      {/* Partie droite avec le formulaire - Fond blanc sur toute la page */}
+      <div className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md mx-auto w-full">
+          <div className="bg-white rounded-2xl flex flex-col h-full">
             <div className="p-8 flex-1 flex flex-col">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold mb-2" style={{ color: '#173740' }}>
