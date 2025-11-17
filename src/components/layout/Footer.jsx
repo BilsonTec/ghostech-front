@@ -22,15 +22,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-[#D2F5F2]">
                 <FaMapMarkerAlt className="text-[#43959A] mr-3 flex-shrink-0" />
-                <span className="text-sm">IUA, Corniche, Nouakchott</span>
+                <span className="text-sm">IUA, Corniche</span>
               </div>
               <div className="flex items-center text-[#D2F5F2]">
                 <FaPhone className="text-[#43959A] mr-3 flex-shrink-0" />
-                <span className="text-sm">+222 XX XX XX XX</span>
+                <a href="#footer"><span className="text-sm">+222 05 56 13 02 45</span></a>
               </div>
               <div className="flex items-center text-[#D2F5F2]">
                 <FaEnvelope className="text-[#43959A] mr-3 flex-shrink-0" />
-                <span className="text-sm">contact@ghostech.mr</span>
+                <span className="text-sm">ghostech92@gmail.com</span>
               </div>
               <div className="flex items-center text-[#D2F5F2]">
                 <FaClock className="text-[#43959A] mr-3 flex-shrink-0" />
@@ -205,17 +205,19 @@ export default function Footer() {
               <p>&copy; {new Date().getFullYear()} GHOSTECH. Tous droits réservés.</p>
             </div>
             <div className="flex flex-wrap justify-center space-x-6 text-sm">
+                <h2>Crée par:</h2>
+
               <Link 
-                to="/mentions-legales" 
-                className="text-[#D2F5F2] hover:text-white transition-colors duration-300"
+                to="/Harding" 
+                className="t link link-primary text-[#D2F5F2] hover:text-white transition-colors duration-300"
               >
-                Mentions légales
+                Jeremie Harding
               </Link>
               <Link 
-                to="/politique-confidentialite" 
-                className="text-[#D2F5F2] hover:text-white transition-colors duration-300"
+                to="/Bilson" 
+                className=" link link-primary text-[#D2F5F2] hover:text-white transition-colors duration-300"
               >
-                Politique de confidentialité
+               Emmanuel Bilson
               </Link>
               <Link 
                 to="/cgu" 
