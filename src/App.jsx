@@ -5,8 +5,9 @@ import Footer from "./components/layout/Footer";
 export default function Layout() {
   const location = useLocation();
 
-  const hideNavbarOn = ["/inscrire"];
-  const hideFooterOn = ["/inscrire"];
+  const hideNavbarOn = ["/inscrire", "/Dashboard"];
+  const hideFooterOn = ["/inscrire", "/Dashboard"];
+
 
   return (
     <div className="min-h-screen flex flex-col">

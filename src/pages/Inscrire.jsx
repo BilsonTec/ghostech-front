@@ -1,7 +1,9 @@
 // @ts-nocheck
 import { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase'; 
 
 const inscrire = () => {
   const [formData, setFormData] = useState({
@@ -11,13 +13,51 @@ const inscrire = () => {
     matricule: "",
   });
 
-  const handleSubmit = (e) => {
+    const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici tu géreras la redirection vers Wave Business
-    console.log("Données du formulaire:", formData);
-    alert("Redirection vers Wave Business...");
+    setLoading(true);
+
+    try {
+      // 1. Sauvegarde dans Firebase
+      const docRef = await addDoc(collection(db, 'inscriptions'), {
+        ...formData,
+        dateInscription: new Date().toISOString(),
+        statut: 'en_attente_paiement',
+        createdAt: serverTimestamp()
+      });
+
+      console.log("Document écrit avec ID: ", docRef.id);
+
+      // 2. Redirection vers Wave Business
+      const waveLink = "https://pay.wave.com/m/M_ci_AQyUB8gRe3c1/c/ci/?amount=1000"; 
+      window.open(waveLink, '_blank');
+
+      // 3. Redirection vers WhatsApp après un délai
+      setTimeout(() => {
+        redirectToWhatsApp();
+      }, 2000);
+
+      // 4. Reset du formulaire
+      setFormData({ nom: "", prenom: "", email: "", matricule: "" });
+
+    } catch (error) {
+      console.error("Erreur lors de l'inscription: ", error);
+      alert("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
+  const redirectToWhatsApp = () => {
+    const whatsappUrl = "https://chat.whatsapp.com/Le6R6EvCKOR8I3kmQEd9XS"
+    
+    
+    window.open(whatsappUrl, '_blank');
+    
+    alert("Inscription réussie ! Rejoignez le groupe WhatsApp pour les prochaines étapes.");
+  };
   return (
     <div className="min-h-screen bg-white">
       {/* Version Desktop */}
@@ -96,13 +136,11 @@ const inscrire = () => {
                     Nom
                   </label>
                   <input
-                    type="text"
+                 type="text"
                     required
                     value={formData.nom}
-                    onChange={(e) =>
-                      setFormData({ ...formData, nom: e.target.value })
-                    }
-                    className="w-full p-4 border-b-2 focus:outline-none focus:border-blue-500 transition-colors"
+                    onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
+                    className="w-full p-4 border-b-2 focus:outline-none transition-colors"
                     style={{
                       borderColor: "#D2F5F2",
                       color: "#173740",
@@ -110,6 +148,7 @@ const inscrire = () => {
                     }}
                     placeholder="Votre nom"
                   />
+
                 </div>
                 <div>
                   <label
@@ -184,21 +223,16 @@ const inscrire = () => {
                 />
               </div>
 
-              <button
+               <button
                 type="submit"
-                className="w-full py-4 text-white font-medium text-lg transition-all duration-300 hover:shadow-lg"
+                disabled={loading}
+                className="w-full py-4 text-white font-medium text-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
-                  backgroundColor: "#43959A",
+                  backgroundColor: loading ? "#2E636A" : "#43959A",
                   color: "#D2F5F2",
                 }}
-                onMouseOver={(e) => {
-                  e.target.style.backgroundColor = "#40B8BC";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.backgroundColor = "#43959A";
-                }}
               >
-                Payer avec Wave Business
+                {loading ? "Traitement..." : "Payer avec Wave Business 1 000 FCFA"}
               </button>
 
               <div className="text-center">
@@ -361,16 +395,17 @@ const inscrire = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full py-4 text-white font-medium text-lg transition-all duration-300"
-              style={{
-                backgroundColor: "#43959A",
-                color: "#D2F5F2",
-              }}
-            >
-              Payer avec Wave
-            </button>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-4 text-white font-medium text-lg transition-all duration-300 disabled:opacity-50"
+          style={{
+            backgroundColor: loading ? "#2E636A" : "#43959A",
+            color: "#D2F5F2",
+          }}
+        >
+          {loading ? "Traitement..." : "Payer avec Wave 1 000 FCFA"}
+        </button>
 
             <div className="text-center">
               <p className="text-xs" style={{ color: "#2E636A" }}>
