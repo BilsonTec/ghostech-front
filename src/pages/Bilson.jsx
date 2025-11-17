@@ -35,7 +35,7 @@ export default function Bilson() {
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center overflow-hidden bg-gray-100 rounded-lg w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                   <img 
-                    src="/src/assets/bilson.jpg" 
+                    src={photo} 
                     alt="Emanuelle Bilson" 
                     className="object-cover w-full h-full"
                     onError={(e) => {
