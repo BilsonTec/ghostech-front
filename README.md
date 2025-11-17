@@ -21,7 +21,7 @@ Le site a pour but de :
 - ⚡ **Vite** (React)
 - 🎨 **Tailwind CSS**
 - 🌸 **DaisyUI**
-- 🔥 **Firebase** (Auth + Firestore + Hosting)
+- 🔥 **Firebase** (Firestore + Hosting)
 - 🧭 **React Router**
 - 💳 **Wave Business** (paiement mobile)
 - 📱 Responsive mobile-first design

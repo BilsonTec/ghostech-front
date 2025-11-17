@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Link } from "react-router-dom";
 import logo from "../../assets/gost-removebg-preview.png";
 
