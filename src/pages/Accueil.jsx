@@ -109,10 +109,10 @@ export default function Accueil() {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-gradient-to-br from-blue-50 to-green-50">
 
-      {/* HERO SECTION AVEC FOND BLANC ET TEXTE NOIR */}
-      <section className="bg-white text-gray-900 py-16 border-b border-gray-200">
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-br from-blue-50 to-green-50 text-gray-900 py-16 border-b border-[#D2F5F2]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             {/* Texte */}
@@ -128,15 +128,15 @@ de formation GHOSTECH !
 
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <div className="bg-green-800 text-white px-6 py-3 font-bold text-lg text-center rounded-lg hover:bg-green-900 transition-colors">
+                <div className="bg-[#43959A] text-white px-6 py-3 font-bold text-lg text-center rounded-lg hover:bg-[#3a8489] transition-colors shadow-lg">
                   29 novembre 2025
                 </div>
-                <div className="bg-blue-600 text-white px-6 py-3 font-bold text-lg text-center rounded-lg hover:bg-blue-700 transition-colors">
+                <div className="bg-gray-900 text-white px-6 py-3 font-bold text-lg text-center rounded-lg hover:bg-black transition-colors shadow-lg">
                   IUA, Corniche
                 </div>
                 <Link 
                   to="/inscrire" 
-                  className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-gray-800 transition-all text-center"
+                  className="bg-[#2E636A] text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-[#25545a] transition-all text-center shadow-lg hover:shadow-xl"
                 >
                   S'inscrire
                 </Link>
@@ -150,9 +150,9 @@ de formation GHOSTECH !
                 className="transform transition-transform duration-1000 ease-out"
               >
                 <img 
-                  src="/src/assets/gost-removebg-preview.png"
+                  src="/src/assets/3d-cartoon-business-character.jpg"
                   alt="Étudiants en formation tech"
-                  className="w-full max-w-md rounded-2xl shadow-xl"
+                  className="w-full max-w-md rounded-2xl shadow-2xl border-4 border-white"
                 />
               </div>
             </div>
@@ -161,13 +161,13 @@ de formation GHOSTECH !
       </section>
 
       {/* SECTION CAROUSEL AVEC TEXTE */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Carousel */}
             <div className="relative">
-              <div className="overflow-hidden rounded-2xl shadow-2xl">
+              <div className="overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-900/10">
                 <div 
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -180,7 +180,7 @@ de formation GHOSTECH !
                           alt={slide.title}
                           className="w-full h-96 object-cover"
                         />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                           <h3 className="text-white text-xl font-bold">{slide.title}</h3>
                           <p className="text-gray-200">{slide.description}</p>
                         </div>
@@ -193,13 +193,13 @@ de formation GHOSTECH !
               {/* Boutons de navigation */}
               <button 
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-lg border border-gray-200"
               >
                 <FaChevronLeft />
               </button>
               <button 
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-lg border border-gray-200"
               >
                 <FaChevronRight />
               </button>
@@ -211,7 +211,7 @@ de formation GHOSTECH !
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentSlide ? 'bg-green-800' : 'bg-gray-300'
+                      index === currentSlide ? 'bg-[#43959A]' : 'bg-gray-400'
                     }`}
                   />
                 ))}
@@ -222,9 +222,9 @@ de formation GHOSTECH !
             <div className="space-y-6">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Découvrez notre <span className="text-green-800">écosystème</span> d'apprentissage
+                  Découvrez notre <span className="text-[#43959A]">écosystème</span> d'apprentissage
                 </h2>
-                <p className="text-xl text-gray-600 mb-6">
+                <p className="text-xl text-gray-700 mb-6">
                   Chez GHOSTECH, nous créons un environnement où l'innovation rencontre l'éducation. 
                   Nos espaces sont conçus pour favoriser la créativité et la collaboration.
                 </p>
@@ -232,8 +232,8 @@ de formation GHOSTECH !
 
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-[#D2F5F2] rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-[#43959A]">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Infrastructures Modernes</h3>
@@ -244,8 +244,8 @@ de formation GHOSTECH !
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-[#D2F5F2] rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-[#43959A]">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Expertise Pratique</h3>
@@ -256,8 +256,8 @@ de formation GHOSTECH !
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-[#D2F5F2] rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-[#43959A]">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Communauté Dynamique</h3>
@@ -268,16 +268,16 @@ de formation GHOSTECH !
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200">
-                <h4 className="font-bold text-blue-800 text-lg mb-2">Prochaine Session</h4>
-                <p className="text-blue-700 mb-3">
+              <div className="bg-[#D2F5F2] p-6 rounded-2xl border-2 border-[#43959A] shadow-lg">
+                <h4 className="font-bold text-gray-900 text-lg mb-2">Prochaine Session</h4>
+                <p className="text-gray-700 mb-3">
                   Rejoignez notre communauté de plus de 500 apprenants qui ont transformé leur carrière
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-blue-800 font-semibold">29 Novembre 2025</span>
+                  <span className="text-gray-900 font-semibold">29 Novembre 2025</span>
                   <Link 
                     to="/inscrire" 
-                    className="bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-900 transition-colors"
+                    className="bg-[#43959A] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#3a8489] transition-colors shadow hover:shadow-md"
                   >
                     Réserver ma place
                   </Link>
@@ -289,20 +289,20 @@ de formation GHOSTECH !
       </section>
 
       {/* SECTION PROGRAMMES AVEC IMAGES STATIQUES */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Texte descriptif à gauche */}
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Des programmes <span className="text-green-800">innovants</span> pour votre avenir
+                  Des programmes <span className="text-[#43959A]">innovants</span> pour votre avenir
                 </h2>
-                <p className="text-xl text-gray-600 mb-6">
+                <p className="text-xl text-gray-700 mb-6">
                   Chez GHOSTECH, nous concevons des formations qui répondent aux besoins actuels du marché numérique. 
                   Nos programmes allient théorie et pratique pour une montée en compétences rapide et efficace.
                 </p>
-                <p className="text-lg text-gray-500">
+                <p className="text-lg text-gray-600">
                   Chaque spécialisation est développée en collaboration avec des experts du secteur 
                   pour garantir une adéquation parfaite avec les attentes des employeurs.
                 </p>
@@ -313,27 +313,27 @@ de formation GHOSTECH !
                 ref={statsRef}
                 className="grid grid-cols-2 gap-6 mt-8 opacity-0 transform translate-y-8 transition-all duration-700"
               >
-                <div className="text-center p-4 bg-green-50 rounded-xl hover:scale-105 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-green-800">95%</div>
-                  <div className="text-sm text-gray-600">Taux d'emploi</div>
+                <div className="text-center p-4 bg-[#D2F5F2] rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-200">
+                  <div className="text-2xl font-bold text-[#43959A]">95%</div>
+                  <div className="text-sm text-gray-700">Taux d'emploi</div>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-xl hover:scale-105 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-blue-800">12</div>
-                  <div className="text-sm text-gray-600">Semaines intensives</div>
+                <div className="text-center p-4 bg-white rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-200">
+                  <div className="text-2xl font-bold text-gray-900">12</div>
+                  <div className="text-sm text-gray-700">Semaines intensives</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-xl hover:scale-105 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-green-800">50+</div>
-                  <div className="text-sm text-gray-600">Projets réalisés</div>
+                <div className="text-center p-4 bg-[#D2F5F2] rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-200">
+                  <div className="text-2xl font-bold text-[#43959A]">50+</div>
+                  <div className="text-sm text-gray-700">Projets réalisés</div>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-xl hover:scale-105 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-blue-800">24/7</div>
-                  <div className="text-sm text-gray-600">Support mentor</div>
+                <div className="text-center p-4 bg-white rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-200">
+                  <div className="text-2xl font-bold text-gray-900">24/7</div>
+                  <div className="text-sm text-gray-700">Support mentor</div>
                 </div>
               </div>
 
               <Link 
                 to="/programmes" 
-                className="inline-flex items-center gap-2 bg-green-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors mt-6 transform hover:scale-105 duration-300"
+                className="inline-flex items-center gap-2 bg-[#43959A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3a8489] transition-colors mt-6 transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
               >
                 Voir tous les programmes
                 <FaArrowRight className="text-sm" />
@@ -350,7 +350,7 @@ de formation GHOSTECH !
                 >
                   <Link 
                     to={item.link}
-                    className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 block"
+                    className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 block border-2 border-white"
                   >
                     <div className="aspect-square overflow-hidden">
                       <img 
@@ -359,14 +359,14 @@ de formation GHOSTECH !
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <h3 className="text-lg font-bold mb-1">{item.title}</h3>
                         <p className="text-sm text-gray-200">{item.description}</p>
                       </div>
                     </div>
                     <div className="absolute top-3 right-3">
-                      <span className="bg-green-800 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-[#43959A] text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg">
                         Nouveau
                       </span>
                     </div>
@@ -377,7 +377,7 @@ de formation GHOSTECH !
           </div>
 
           {/* Bannière supplémentaire avec effet parallaxe */}
-          <div className="mt-16 bg-gradient-to-r from-green-800 to-blue-800 rounded-2xl p-8 text-white relative overflow-hidden">
+          <div className="mt-16 bg-gradient-to-r from-[#43959A] to-gray-900 rounded-2xl p-8 text-white relative overflow-hidden shadow-2xl">
             <div 
               className="absolute inset-0 bg-cover bg-center opacity-10"
               style={{ backgroundImage: 'url(/src/assets/pattern.svg)' }}
@@ -386,16 +386,16 @@ de formation GHOSTECH !
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">Prêt à commencer ?</h3>
-                  <p className="text-green-100">Rejoignez notre prochaine session</p>
+                  <p className="text-[#D2F5F2]">Rejoignez notre prochaine session</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold">29 Novembre 2025</div>
-                  <div className="text-green-100">Date de début</div>
+                  <div className="text-[#D2F5F2]">Date de début</div>
                 </div>
                 <div className="text-center">
                   <Link 
                     to="/inscrire" 
-                    className="inline-block bg-white text-green-800 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors transform hover:scale-105 duration-300"
+                    className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
                   >
                     S'inscrire maintenant
                   </Link>
@@ -407,7 +407,7 @@ de formation GHOSTECH !
       </section>
 
       {/* POURQUOI NOUS CHOISIR */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
+      <section className="py-20 bg-white/80 backdrop-blur-sm relative overflow-hidden">
         {/* Fond avec effet parallaxe */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-5"
@@ -420,14 +420,14 @@ de formation GHOSTECH !
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Pourquoi choisir <span className="text-green-800">GHOSTECH</span> ?
+              Pourquoi choisir <span className="text-[#43959A]">GHOSTECH</span> ?
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaClock className="text-green-800 text-2xl" />
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200">
+              <div className="w-20 h-20 bg-[#D2F5F2] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#43959A]">
+                <FaClock className="text-[#43959A] text-2xl" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Apprentissage Accéléré</h3>
               <p className="text-gray-600">
@@ -435,9 +435,9 @@ de formation GHOSTECH !
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaLaptopCode className="text-blue-800 text-2xl" />
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200">
+              <div className="w-20 h-20 bg-[#E8F7F7] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#173740]">
+                <FaLaptopCode className="text-gray-900 text-2xl" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">100% Pratique</h3>
               <p className="text-gray-600">
@@ -445,9 +445,9 @@ de formation GHOSTECH !
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaUsers className="text-green-800 text-2xl" />
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200">
+              <div className="w-20 h-20 bg-[#D2F5F2] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#43959A]">
+                <FaUsers className="text-[#43959A] text-2xl" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Communauté Active</h3>
               <p className="text-gray-600">
@@ -460,7 +460,7 @@ de formation GHOSTECH !
 
       {/* SECTION AVANTAGES AVEC EFFET PARALLAXE */}
       <section 
-        className="py-20 bg-gradient-to-r from-green-800 to-blue-800 text-white relative overflow-hidden"
+        className="py-20 bg-gradient-to-r from-gray-900 to-[#173740] text-white relative overflow-hidden"
         style={{
           backgroundImage: 'url(/src/assets/parallax-bg.jpg)',
           backgroundAttachment: 'fixed',
@@ -469,7 +469,7 @@ de formation GHOSTECH !
         }}
       >
         {/* Overlay pour améliorer la lisibilité */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-800/90 to-blue-800/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-[#173740]/90"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div 
@@ -483,64 +483,64 @@ de formation GHOSTECH !
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Compétences Techniques Solides</h3>
-                    <p className="text-green-100">Maîtrisez les technologies les plus demandées sur le marché</p>
+                    <p className="text-[#D2F5F2]">Maîtrisez les technologies les plus demandées sur le marché</p>
                   </div>
                 </div>
 
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Portfolio de Projets</h3>
-                    <p className="text-green-100">Construisez un portfolio impressionnant avec des projets réels</p>
+                    <p className="text-[#D2F5F2]">Construisez un portfolio impressionnant avec des projets réels</p>
                   </div>
                 </div>
 
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Mentorat Personnalisé</h3>
-                    <p className="text-green-100">Accompagnement individuel par des experts du secteur</p>
+                    <p className="text-[#D2F5F2]">Accompagnement individuel par des experts du secteur</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Certification Reconnue</h3>
-                    <p className="text-green-100">Obtenez une certification valorisant vos compétences</p>
+                    <p className="text-[#D2F5F2]">Obtenez une certification valorisant vos compétences</p>
                   </div>
                 </div>
 
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Préparation à l'Emploi</h3>
-                    <p className="text-green-100">Ateliers CV, simulations d'entretiens, networking</p>
+                    <p className="text-[#D2F5F2]">Ateliers CV, simulations d'entretiens, networking</p>
                   </div>
                 </div>
 
                 <div className="flex items-start transform hover:translate-x-2 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaCheck className="text-green-800 text-sm" />
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1 border border-gray-300">
+                    <FaCheck className="text-[#43959A] text-sm" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold mb-2">Accès à Vie</h3>
-                    <p className="text-green-100">Accédez aux mises à jour du contenu même après la formation</p>
+                    <p className="text-[#D2F5F2]">Accédez aux mises à jour du contenu même après la formation</p>
                   </div>
                 </div>
               </div>
@@ -550,36 +550,36 @@ de formation GHOSTECH !
       </section>
 
       {/* SECTION FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Questions <span className="text-green-800">Fréquentes</span>
+              Questions <span className="text-[#43959A]">Fréquentes</span>
             </h2>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="collapse collapse-plus bg-white border border-gray-300 hover:shadow-lg transition-shadow duration-300">
+            <div className="collapse collapse-plus bg-white border-2 border-[#D2F5F2] hover:shadow-lg transition-shadow duration-300">
               <input type="radio" name="my-accordion-3" defaultChecked />
-              <div className="collapse-title font-semibold">Comment créer un compte ?</div>
-              <div className="collapse-content text-sm">Cliquez sur le bouton "S'inscrire" en haut à droite et suivez le processus d'inscription.</div>
+              <div className="collapse-title font-semibold text-gray-900">Comment créer un compte ?</div>
+              <div className="collapse-content text-sm text-gray-600">Cliquez sur le bouton "S'inscrire" en haut à droite et suivez le processus d'inscription.</div>
             </div>
-            <div className="collapse collapse-plus bg-white border border-gray-300 hover:shadow-lg transition-shadow duration-300">
+            <div className="collapse collapse-plus bg-white border-2 border-[#D2F5F2] hover:shadow-lg transition-shadow duration-300">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title font-semibold">J'ai oublié mon mot de passe. Que faire ?</div>
-              <div className="collapse-content text-sm">Cliquez sur "Mot de passe oublié" sur la page de connexion et suivez les instructions envoyées par email.</div>
+              <div className="collapse-title font-semibold text-gray-900">J'ai oublié mon mot de passe. Que faire ?</div>
+              <div className="collapse-content text-sm text-gray-600">Cliquez sur "Mot de passe oublié" sur la page de connexion et suivez les instructions envoyées par email.</div>
             </div>
-            <div className="collapse collapse-plus bg-white border border-gray-300 hover:shadow-lg transition-shadow duration-300">
+            <div className="collapse collapse-plus bg-white border-2 border-[#D2F5F2] hover:shadow-lg transition-shadow duration-300">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title font-semibold">Comment mettre à jour mes informations de profil ?</div>
-              <div className="collapse-content text-sm">Allez dans les paramètres "Mon Compte" et sélectionnez "Modifier le profil" pour apporter des modifications.</div>
+              <div className="collapse-title font-semibold text-gray-900">Comment mettre à jour mes informations de profil ?</div>
+              <div className="collapse-content text-sm text-gray-600">Allez dans les paramètres "Mon Compte" et sélectionnez "Modifier le profil" pour apporter des modifications.</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA FINAL AVEC EFFET PARALLAXE */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-[#2E636A] text-white relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
@@ -592,43 +592,25 @@ de formation GHOSTECH !
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Prêt à transformer votre carrière ?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-[#D2F5F2] mb-8 max-w-2xl mx-auto">
             Rejoignez la prochaine promotion et démarrez votre avenir dans la tech
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               to="/inscrire" 
-              className="bg-green-800 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-900 transition-all transform hover:scale-105 duration-300"
+              className="bg-[#43959A] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#3a8489] transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
             >
               S'inscrire maintenant
             </Link>
             <Link 
               to="/contact" 
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 duration-300"
+              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
             >
               Nous contacter
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-green-400">🚀</div>
-              <div className="text-gray-300 mt-2">Lancement rapide</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-green-400">💼</div>
-              <div className="text-gray-300 mt-2">Projets concrets</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-green-400">👨‍🏫</div>
-              <div className="text-gray-300 mt-2">Experts mentors</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold text-green-400">🎯</div>
-              <div className="text-gray-300 mt-2">Objectif emploi</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -657,7 +639,6 @@ de formation GHOSTECH !
         .rotating-text span:nth-child(3) { animation-delay: 4s; }
         .rotating-text span:nth-child(4) { animation-delay: 6s; }
         .rotating-text span:nth-child(5) { animation-delay: 8s; }
-        .rotating-text span:nth-child(6) { animation-delay: 10s; }
 
         @keyframes text-rotate {
           0% {
