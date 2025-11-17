@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/gost-removebg-preview.png";
+import logo from "../../assets/gg.jpg";
 
 export default function Navbar() {
   return (
@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <Link
             to="/inscrire"
-            className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+            className="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
           >
             S'inscrire
           </Link>
