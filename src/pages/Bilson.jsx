@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { FaLinkedin, FaWhatsapp, FaEnvelope, FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
+// IMPORTATION DES IMAGES
+
+import photo from "../assets/bilson.jpg"
+
 export default function Bilson() {
   return (
     <div className="min-h-screen py-16 bg-gray-50">

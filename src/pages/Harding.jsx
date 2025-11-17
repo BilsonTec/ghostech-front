@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaLinkedin, FaWhatsapp, FaEnvelope, FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
+import photo from "../assets/harding.png"
+
 // @ts-nocheck
 export default function Harding() {
   return (

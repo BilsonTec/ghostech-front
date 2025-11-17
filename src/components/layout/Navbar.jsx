@@ -12,12 +12,12 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <nav className="flex items-center justify-between px-5 py-3">
 
         {/* LOGO (visible seulement en desktop) */}
         <Link to="/" className="hidden md:block">
-          <img src={logo} alt="Logo" className="h-12 w-auto" />
+          <img src={logo} alt="Logo" className="w-auto h-12" />
         </Link>
 
         {/* TITRE (ou logo simplifié quand mobile) */}
@@ -42,19 +42,19 @@ export default function Navbar() {
         </button>
 
         {/* MENU DESKTOP */}
-        <div className="hidden md:flex items-center w-full">
+        <div className="items-center hidden w-full md:flex">
           {/* Liens centrés */}
           <ul className="flex flex-1 justify-center gap-8 font-[500]">
             <li><Link to="/" className="hover:text-blue-600">Accueil</Link></li>
             <li><Link to="/Programme" className="hover:text-blue-600">Événements</Link></li>
-            <li><a id="footer" className="hover:text-blue-600 cursor-pointer">Contact</a></li>
+            <li><a id="footer" className="cursor-pointer hover:text-blue-600">Contact</a></li>
           </ul>
 
           {/* Bouton "S'inscrire" tout à droite */}
           <div className="">
             <Link
               to="/inscrire"
-              className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-5 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
             >
               S'inscrire
             </Link>
@@ -64,14 +64,14 @@ export default function Navbar() {
 
       {/* MENU MOBILE */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-10 text-xl font-semibold animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 text-xl font-semibold bg-white animate-fadeIn">
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Accueil</Link>
-          <Link to="/events" onClick={() => setIsMobileMenuOpen(false)}>Événements</Link>
+          <Link to="/Programme" onClick={() => setIsMobileMenuOpen(false)}>Événements</Link>
           <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
           <Link
             to="/inscrire"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-3 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
           >
             S'inscrire
           </Link>

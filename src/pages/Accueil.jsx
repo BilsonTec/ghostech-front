@@ -8,6 +8,19 @@ import { HiOutlineCalendarDateRange } from "react-icons/hi2";
 import { FaPhone } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
+// importasion des images
+import photo from "../assets/200.webp";
+import photo from "../assets/AIESEC-New-Logo1.png";
+import photo from "../assets/arduino_librairy.jpg";
+import photo from "../assets/arduino.webp";
+import photo from "../assets/coder.gif";
+import photo from "../assets/developpeur-face-ia.webp";
+import photo from "../assets/Developpeur-Web.jpg";
+import photo from "../assets/ERANOVE-Academy-reacdre.jpg";
+import photo from "../assets/femme1.png";
+import photo from "../assets/giphy.gif";
+import photo from "../assets/HELECTRO.jpg";
+
 
 export default function Accueil() {
  const [currentSlide, setCurrentSlide] = useState(0);
