@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Link } from "react-router-dom";
-import logo from "../../assets/gost-removebg-preview.png";
+import logo from "../../assets/gg.jpg";
 
 export default function Navbar() {
   return (
@@ -18,7 +18,7 @@ export default function Navbar() {
           <ul className="flex space-x-8 font-medium text-lg">
             <li><Link to="/" className="hover:text-blue-600 transition">Accueil</Link></li>
             <li><Link to="/programme" className="hover:text-blue-600 transition">Programme</Link></li>
-            <li><Link to="/contact" className="hover:text-blue-600 transition">Contact</Link></li>
+            <li><a  className="hover:text-blue-600 transition cursor-pointer">Contact</a></li>
           </ul>
         </div>
 
@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <Link
             to="/inscrire"
-            className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+            className="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
           >
             S'inscrire
           </Link>

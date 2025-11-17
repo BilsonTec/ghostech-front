@@ -1,17 +1,23 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
-export default function App() {
+export default function Layout() {
+  const location = useLocation();
+
+  const hideNavbarOn = ["/inscrire"];
+  const hideFooterOn = ["/inscrire"];
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      
+      {!hideNavbarOn.includes(location.pathname) && <Navbar />}
 
       <main className="flex-grow">
         <Outlet />
       </main>
 
-      <Footer />
+      {!hideFooterOn.includes(location.pathname) && <Footer />}
     </div>
   );
 }
