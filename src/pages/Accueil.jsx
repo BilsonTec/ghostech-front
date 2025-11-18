@@ -9,17 +9,19 @@ import { FaPhone } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 // importasion des images
-import photo from "../assets/200.webp";
-import photo from "../assets/AIESEC-New-Logo1.png";
-import photo from "../assets/arduino_librairy.jpg";
-import photo from "../assets/arduino.webp";
-import photo from "../assets/coder.gif";
-import photo from "../assets/developpeur-face-ia.webp";
-import photo from "../assets/Developpeur-Web.jpg";
-import photo from "../assets/ERANOVE-Academy-reacdre.jpg";
-import photo from "../assets/femme1.png";
-import photo from "../assets/giphy.gif";
-import photo from "../assets/HELECTRO.jpg";
+import W200 from "../assets/200.webp";
+import AIESEC from "../assets/AIESEC-New-Logo1.png";
+import arduino_librairy from "../assets/arduino_librairy.jpg";
+import arduino from "../assets/arduino.webp";
+import coder from "../assets/coder.gif";
+import developpeur from "../assets/developpeur-face-ia.webp";
+import Developpeur_web from "../assets/Developpeur-Web.jpg";
+import Eranove from "../assets/ERANOVE-Academy-reacdre.jpg";
+import femme1 from "../assets/femme1.png";
+import giphy from "../assets/giphy.gif";
+import Helectro from "../assets/HELECTRO.jpg";
+import projet_arduino from "../assets/projet_arduino.avif";
+import robot from "../assets/robo.gif";
 
 
 export default function Accueil() {
@@ -36,22 +38,22 @@ export default function Accueil() {
 
  const slides = [
  {
- image: "/src/assets/Developpeur-Web.jpg",
+ image: Developpeur_web,
  title: "Ateliers Pratiques",
  description: "Apprentissage hands-on avec des équipements modernes"
  },
  {
- image: "/src/assets/projet_arduino.avif",
+ image: projet_arduino,
  title: "Laboratoires High-Tech",
  description: "Environnements de développement professionnels"
  },
  {
- image: "/src/assets/developpeur-face-ia.webp",
+ image: developpeur,
  title: "Travail d'Équipe",
  description: "Collaboration sur des projets innovants"
  },
  {
- image: "/src/assets/arduino_librairy.jpg",
+ image: arduino_librairy,
  title: "Cérémonies de Fin",
  description: "Célébration des réussites et certifications"
  }
@@ -59,22 +61,22 @@ export default function Accueil() {
 
  const programmeImages = [
  {
- image: "/src/assets/coder.gif",
+ image: coder,
  title: "Développement Web",
  description: "Full Stack Modern",
  },
  {
- image: "/src/assets/robo.gif",
+ image: robot,
  title: "Mobile Development",
  description: "Apps iOS & Android",
  },
  {
- image: "/src/assets/giphy.gif",
+ image: giphy,
  title: "Internet des Objets",
  description: "Connectivité & Capteurs",
  },
  {
- image: "/src/assets/200.webp",
+ image: W200,
  title: "Réseaux & Sécurité",
  description: "Infrastructure & Protection",
  }
@@ -199,7 +201,7 @@ export default function Accueil() {
  
  >
  <img
- src="/src/assets/femme1.png"
+ src= {femme1}
  alt="Étudiants en formation tech"
  className="object-contain w-full h-auto"
  />
@@ -343,12 +345,12 @@ export default function Accueil() {
  <div className="flex gap-6 py-4 animate-scroll sm:gap-8 lg:gap-12">
  {/* Logos des partenaires - première série */}
  {[
- "/src/assets/HELECTRO.jpg",
- "/src/assets/AIESEC-New-Logo1.png",
- "/src/assets/ERANOVE-Academy-reacdre.jpg",
- "/src/assets/HELECTRO.jpg",
- "/src/assets/AIESEC-New-Logo1.png",
- "/src/assets/ERANOVE-Academy-reacdre.jpg",
+ Helectro,
+ AIESEC,
+ Eranove,
+ Helectro,
+ AIESEC,
+ Eranove
  ].map((logo, index) => (
  <div
  key={`first-${index}`}
@@ -364,12 +366,12 @@ export default function Accueil() {
 
  {/* Duplication pour l'effet de boucle continu */}
  {[
- "/src/assets/HELECTRO.jpg",
- "/src/assets/AIESEC-New-Logo1.png",
- "/src/assets/ERANOVE-Academy-reacdre.jpg",
- "/src/assets/HELECTRO.jpg",
- "/src/assets/AIESEC-New-Logo1.png",
- "/src/assets/ERANOVE-Academy-reacdre.jpg",
+ Helectro,
+ AIESEC,
+ Eranove,
+ Helectro,
+ AIESEC,
+ Eranove
  ].map((logo, index) => (
  <div
  key={`second-${index}`}
@@ -516,7 +518,7 @@ export default function Accueil() {
  <div
  className="absolute inset-0 bg-center bg-cover opacity-5"
  style={{
- backgroundImage: 'url(/src/assets/tech-pattern.jpg)',
+ backgroundImage: {arduino},
  backgroundAttachment: 'fixed'
  }}
  ></div>
@@ -566,7 +568,7 @@ export default function Accueil() {
  <section
  className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-gray-900 to-[#173740] text-white relative overflow-hidden"
  style={{
- backgroundImage: 'url(/src/assets/arduino.webp)',
+ backgroundImage: `url(${arduino})`,
  backgroundAttachment: 'fixed',
  backgroundSize: 'cover',
  backgroundPosition: 'center'
@@ -707,7 +709,7 @@ export default function Accueil() {
  <div
  className="absolute inset-0 bg-center bg-cover opacity-20"
  style={{
- backgroundImage: 'url(/src/assets/space-bg.jpg)',
+ backgroundImage: `url(${arduino_librairy})`,
  backgroundAttachment: 'fixed'
  }}
  ></div>
