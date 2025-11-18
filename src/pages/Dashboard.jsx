@@ -43,9 +43,9 @@ const DashboardInscrits = () => {
   // Page de connexion
   if (!accesAutorise) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#191D27' }}>
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
-          <h2 className="text-2xl font-light mb-6 text-center" style={{ color: '#173740' }}>
+      <div className="flex items-center justify-center min-h-screen" style={{ backgroundColor: '#191D27' }}>
+        <div className="w-full max-w-md p-8 mx-4 bg-white rounded-lg shadow-lg">
+          <h2 className="mb-6 text-2xl font-light text-center" style={{ color: '#173740' }}>
             Accès Administrateur
           </h2>
           <div className="space-y-4">
@@ -60,7 +60,7 @@ const DashboardInscrits = () => {
             />
             <button
               onClick={verifierMotDePasse}
-              className="w-full py-3 text-white font-medium rounded transition-all"
+              className="w-full py-3 font-medium text-white transition-all rounded"
               style={{ backgroundColor: '#43959A' }}
             >
               Accéder au Dashboard
@@ -73,7 +73,7 @@ const DashboardInscrits = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#191D27' }}>
+      <div className="flex items-center justify-center min-h-screen" style={{ backgroundColor: '#191D27' }}>
         <div className="text-xl" style={{ color: '#38F4F3' }}>Chargement des inscrits...</div>
       </div>
     );
@@ -82,9 +82,9 @@ const DashboardInscrits = () => {
   return (
     <div className="min-h-screen p-6" style={{ backgroundColor: '#191D27' }}>
       {/* Header avec bouton de déconnexion - Style moderne */}
-      <div className="flex justify-between items-center mb-12">
+      <div className="flex items-center justify-between mb-12">
         <div>
-          <h1 className="text-4xl font-light mb-3 tracking-tight" style={{ color: '#D2F5F2' }}>
+          <h1 className="mb-3 text-4xl font-light tracking-tight" style={{ color: '#D2F5F2' }}>
             Liste des Inscrits
           </h1>
           <div className="w-20 h-1 rounded-full" style={{ backgroundColor: '#38F4F3' }}></div>
@@ -112,7 +112,7 @@ const DashboardInscrits = () => {
 
       {/* Tableau - Design minimaliste moderne */}
       <div 
-        className="rounded-1xl backdrop-blur-sm border overflow-hidden"
+        className="overflow-hidden border rounded-1xl backdrop-blur-sm"
         style={{ 
           backgroundColor: 'rgba(23, 55, 64, 0.4)',
           borderColor: 'rgba(210, 245, 242, 0.1)'
@@ -128,19 +128,22 @@ const DashboardInscrits = () => {
           <table className="w-full">
             <thead>
               <tr style={{ backgroundColor: 'rgba(23, 55, 64, 0.8)' }}>
-                <th className="text-left p-4 font-normal text-sm uppercase tracking-wider" style={{ color: '#D2F5F2' }}>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
                   Matricule
                 </th>
-                <th className="text-left p-4 font-normal text-sm uppercase tracking-wider" style={{ color: '#D2F5F2' }}>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
                   Nom
                 </th>
-                <th className="text-left p-4 font-normal text-sm uppercase tracking-wider" style={{ color: '#D2F5F2' }}>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
                   Prénom
                 </th>
-                <th className="text-left p-4 font-normal text-sm uppercase tracking-wider" style={{ color: '#D2F5F2' }}>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
                   Email
                 </th>
-                <th className="text-left p-4 font-normal text-sm uppercase tracking-wider" style={{ color: '#D2F5F2' }}>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
+                  Statut
+                </th>
+                <th className="p-4 text-sm font-normal tracking-wider text-left uppercase" style={{ color: '#D2F5F2' }}>
                   Date d'inscription
                 </th>
               </tr>
@@ -166,7 +169,19 @@ const DashboardInscrits = () => {
                   <td className="p-4" style={{ color: '#D2F5F2' }}>
                     {inscrit.email}
                   </td>
-
+                  <td className="p-4">
+                    <span 
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                        inscrit.statut === 'payement_effectué' 
+                          ? 'bg-green-100 text-green-800' 
+                          : inscrit.statut === 'en attente'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-gray-100 text-gray-800'
+                      }`}
+                    >
+                      {inscrit.statut || 'Non défini'}
+                    </span>
+                  </td>
                   <td className="p-4 text-sm" style={{ color: '#2E636A' }}>
                     {inscrit.dateInscription 
                       ? new Date(inscrit.dateInscription).toLocaleDateString('fr-FR')
@@ -181,7 +196,7 @@ const DashboardInscrits = () => {
 
         {/* Footer du tableau */}
         <div className="p-4 border-t" style={{ borderColor: 'rgba(210, 245, 242, 0.1)' }}>
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <div className="text-sm" style={{ color: '#2E636A' }}>
               {inscrits.length} inscrit(s)
             </div>
@@ -195,7 +210,7 @@ const DashboardInscrits = () => {
       {/* Footer global */}
       <div className="mt-12 text-center">
         <p className="text-sm" style={{ color: '#2E636A' }}>
-          {new Date().getFullYear()} • Dashboard Inscriptions -- GHOSTECH Fait par : <p className='link link-primary inline'>Emmanuel Bilson</p> & <p  className='link link-primary inline'>Jeremie Harding</p>
+          {new Date().getFullYear()} • Dashboard Inscriptions -- GHOSTECH Fait par : <p className='inline link link-primary'>Emmanuel Bilson</p> & <p  className='inline link link-primary'>Jeremie Harding</p>
         </p>
       </div>
     </div>

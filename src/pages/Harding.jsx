@@ -33,7 +33,7 @@ export default function Harding() {
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center overflow-hidden bg-gray-100 rounded-lg w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                   <img 
-                    src="/src/assets/harding.png" 
+                    src={harding} 
                     alt="Jérémie Harding" 
                     className="object-cover w-full h-full"
                     onError={(e) => {

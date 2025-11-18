@@ -1,15 +1,15 @@
-// firebase.js
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+// src/firebaseConfig.js
+// @ts-nocheck
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_EGphkQaXuIWRIotqauwfC0HpgJcDN4M",
-  authDomain: "bootcapm-ghostech.firebaseapp.com",
-  projectId: "bootcapm-ghostech",
-  storageBucket: "bootcapm-ghostech.firebasestorage.app",
-  messagingSenderId: "114451529240",
-  appId: "1:114451529240:web:59e65c849a7fe010860d6d"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export default app;
